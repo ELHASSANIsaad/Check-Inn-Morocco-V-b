@@ -9,9 +9,12 @@ import Auth from './components/Auth/Auth';
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
 
 import HomeRestau from './components/HomeRestau/HomeRestau';
-
 import RestauDetails from './components/RestauDetails/RestauDetails';
 import RestauCreatorOrTag from './components/RestauCreatorOrTag/RestauCreatorOrTag';
+
+import HomeHotel from './components/HomeHotel/HomeHotel';
+import HotelDetails from './components/HotelDetails/HotelDetails';
+import HotelCreatorOrTag from './components/HotelCreatorOrTag/HotelCreatorOrTag';
 
 import Landing from './components/Home/Landing';
 
@@ -34,8 +37,14 @@ const App = () => {
           <Route path="/r" exact component={() => <Redirect to="/restaus" />} />
           <Route path="/restaus" exact component={HomeRestau} />                        
           <Route path="/restaus/search" exact component={HomeRestau} />
-          <Route path="/restaus/:id" exact component={HomeRestau} />
+          <Route path="/restaus/:id" exact component={RestauDetails} />
           <Route path={['/creators/:name', '/tags/:name']} component={RestauCreatorOrTag} />
+
+          <Route path="/h" exact component={() => <Redirect to="/hotels" />} />
+          <Route path="/hotels" exact component={HomeHotel} />                        
+          <Route path="/hotels/search" exact component={HomeHotel} />
+          <Route path="/hotels/:id" exact component={HotelDetails} />
+          <Route path={['/creators/:name', '/tags/:name']} component={HotelCreatorOrTag} />
 
         </Switch>
       </Container>

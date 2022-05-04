@@ -30,5 +30,15 @@ export const commentRestau = (value, id) => API.post(`/restaus/${id}/commentRest
 export const updateRestau = (id, updatedRestau) => API.patch(`/restaus/${id}`, updatedRestau);
 export const deleteRestau = (id) => API.delete(`/restaus/${id}`);
 
+export const fetchHotel = (id) => API.get(`/hotels/${id}`);
+export const fetchHotels = (page) => API.get(`/hotels?page=${page}`);
+export const fetchHotelsByCreator = (name) => API.get(`/hotels/creator?name=${name}`);
+export const fetchHotelsBySearch = (searchQuery) => API.get(`/hotels/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`);
+export const createHotel = (newHotel) => API.post('/hotels', newHotel);
+export const likeHotel = (id) => API.patch(`/hotels/${id}/likeHotel`);
+export const commentHotel = (value, id) => API.post(`/hotels/${id}/commentHotel`, { value });
+export const updateHotel = (id, updatedHotel) => API.patch(`/hotels/${id}`, updatedHotel);
+export const deleteHotel = (id) => API.delete(`/hotels/${id}`);
+
 export const signIn = (formData) => API.post('/user/signin', formData);
 export const signUp = (formData) => API.post('/user/signup', formData);

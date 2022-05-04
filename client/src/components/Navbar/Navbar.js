@@ -45,7 +45,7 @@ const Navbar = () => {
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
           <div className={classes.profile}>
-            <Button component={Link} to="/auth" variant="text" color="primary">Hotels</Button>
+            <Button component={Link} to="/hotels" variant="text" color="primary">Hotels</Button>
           <Button component={Link} to="/restaus" variant="text" color="primary">Restaurents</Button>
           <Button component={Link} to="/auth" variant="text" color="primary">Trending</Button>
 
@@ -56,7 +56,7 @@ const Navbar = () => {
         ) : (
           <div className={classes.adjustLog}>
 
-          <Button component={Link} to="/auth" variant="text" color="primary">Hotels</Button>
+          <Button component={Link} to="/hotels" variant="text" color="primary">Hotels</Button>
           <Button component={Link} to="/restaus" variant="text" color="primary">Restaurents</Button>
           <Button component={Link} to="/auth" variant="text" color="primary">Trending</Button>
 
